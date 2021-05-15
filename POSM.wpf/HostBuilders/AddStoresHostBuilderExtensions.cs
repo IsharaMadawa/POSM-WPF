@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using POSM.wpf.State.Accounts;
 using POSM.wpf.State.Authenticators;
 using POSM.wpf.State.Navigators;
 
@@ -13,6 +14,7 @@ namespace POSM.wpf.HostBuilders
             {
                 services.AddSingleton<INavigator, Navigator>();
                 services.AddSingleton<IAuthenticator, Authenticator>();
+                services.AddSingleton<IAccountStore, AccountStore>();
             });
 
             return host;

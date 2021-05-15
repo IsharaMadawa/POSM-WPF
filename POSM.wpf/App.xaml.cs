@@ -18,8 +18,8 @@ namespace POSM.wpf
         {
             return Host.CreateDefaultBuilder(args)
                 .AddConfiguration()
-                //.AddDbContext()
-                //.AddServices()
+                .AddDbContext()
+                .AddServices()
                 .AddStores()
                 .AddViewModels()
                 .AddViews();
@@ -29,13 +29,7 @@ namespace POSM.wpf
         {
             _host.Start();
 
-            //SimpleTraderDbContextFactory contextFactory = _host.Services.GetRequiredService<SimpleTraderDbContextFactory>();
-            //using (SimpleTraderDbContext context = contextFactory.CreateDbContext())
-            //{
-            //    context.Database.Migrate();
-            //}
-
-            Window window = _host.Services.GetRequiredService<MainWindow>();
+			Window window = _host.Services.GetRequiredService<MainWindow>();
             window.Show();
 
             base.OnStartup(e);

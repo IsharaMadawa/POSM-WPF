@@ -5,8 +5,8 @@ namespace POSM.wpf.State.Accounts
 {
     public class AccountStore : IAccountStore
     {
-        private Account _currentAccount;
-        public Account CurrentAccount
+        private User _currentAccount;
+        public User CurrentAccount
         {
             get
             {

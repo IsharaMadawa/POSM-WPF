@@ -37,9 +37,11 @@ namespace POSM.EntityFramework.Models
             {
                 entity.ToTable("Account");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Accounts)
-                    .HasForeignKey(d => d.UserId)
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.HasOne(d => d.IdNavigation)
+                    .WithOne(p => p.Account)
+                    .HasForeignKey<Account>(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_User_Account");
             });
@@ -57,9 +59,8 @@ namespace POSM.EntityFramework.Models
 
                 entity.Property(e => e.PasswordHash)
                     .IsRequired()
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .IsFixedLength(true);
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Username)
                     .IsRequired()

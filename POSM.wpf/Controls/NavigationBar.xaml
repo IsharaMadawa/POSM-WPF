@@ -23,7 +23,7 @@
                 MaxWidth="1000"
                 FontSize="28"
                 Foreground="White"
-                Text="Simple Trader" />
+                Text="POS-M" />
         </Grid>
 
         <Grid Grid.Row="1"
@@ -46,21 +46,12 @@
                     CommandParameter="{x:Static nav:ViewType.Home}"
                     Content="Home"
                     IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:HomeViewModel}}" />
-                <!--<RadioButton Grid.Column="1"
+
+                <RadioButton Grid.Column="1"
                     Command="{Binding UpdateCurrentViewModelCommand}"
-                    CommandParameter="{x:Static nav:ViewType.Portfolio}"
-                    Content="Portfolio"
-                    IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:PortfolioViewModel}}" />
-                <RadioButton Grid.Column="2"
-                    Command="{Binding UpdateCurrentViewModelCommand}"
-                    CommandParameter="{x:Static nav:ViewType.Buy}"
-                    Content="Buy"
-                    IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:BuyViewModel}}" />
-                <RadioButton Grid.Column="3"
-                    Command="{Binding UpdateCurrentViewModelCommand}"
-                    CommandParameter="{x:Static nav:ViewType.Sell}"
-                    Content="Sell"
-                    IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:SellViewModel}}" />-->
+                    CommandParameter="{x:Static nav:ViewType.Settings}"
+                    Content="Settings"
+                    IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:SettingsViewModel}}" />
             </Grid>
         </Grid>
     </Grid>

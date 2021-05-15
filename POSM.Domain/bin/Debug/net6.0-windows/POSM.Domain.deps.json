@@ -9,6 +9,7 @@
       "POSM.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.Identity.Core": "2.2.3",
+          "Microsoft.EntityFrameworkCore": "5.0.6",
           "POSM.EntityFramework": "1.0.0"
         },
         "runtime": {

@@ -5,7 +5,7 @@ namespace POSM.wpf.State.Accounts
 {
     public interface IAccountStore
     {
-        Account CurrentAccount { get; set; }
+        User CurrentAccount { get; set; }
         event Action StateChanged;
     }
 }

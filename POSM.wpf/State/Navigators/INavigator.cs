@@ -6,7 +6,8 @@ namespace POSM.wpf.State.Navigators
     public enum ViewType
     {
         Login,
-        Home
+        Home,
+        Settings
     }
 
     public interface INavigator

@@ -5,14 +5,17 @@ namespace POSM.wpf.ViewModels.Factories
 {
     public class ViewModelFactory : IViewModelFactory
     {
-        private readonly CreateViewModel<HomeViewModel> _createHomeViewModel;
         private readonly CreateViewModel<LoginViewModel> _createLoginViewModel;
+        private readonly CreateViewModel<HomeViewModel> _createHomeViewModel;
+        private readonly CreateViewModel<SettingsViewModel> _createSettingsViewModel;
 
-        public ViewModelFactory(CreateViewModel<HomeViewModel> createHomeViewModel,
-            CreateViewModel<LoginViewModel> createLoginViewModel)
+        public ViewModelFactory(CreateViewModel<LoginViewModel> createLoginViewModel, 
+            CreateViewModel<HomeViewModel> createHomeViewModel,
+            CreateViewModel<SettingsViewModel> createsettingsViewModel)
         {
-            _createHomeViewModel = createHomeViewModel;
             _createLoginViewModel = createLoginViewModel;
+            _createHomeViewModel = createHomeViewModel;
+            _createSettingsViewModel = createsettingsViewModel;
         }
 
         public ViewModelBase CreateViewModel(ViewType viewType)
@@ -23,7 +26,9 @@ namespace POSM.wpf.ViewModels.Factories
                     return _createLoginViewModel();
                 case ViewType.Home:
                     return _createHomeViewModel();
-                default:
+				case ViewType.Settings:
+					return _createSettingsViewModel();
+				default:
                     throw new ArgumentException("The ViewType does not have a ViewModel.", "viewType");
             }
         }

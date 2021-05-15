@@ -19,6 +19,7 @@ namespace POSM.wpf.HostBuilders
 
                 services.AddSingleton<CreateViewModel<HomeViewModel>>(services => () => services.GetRequiredService<HomeViewModel>());
                 services.AddSingleton<CreateViewModel<LoginViewModel>>(services => () => CreateLoginViewModel(services));
+                services.AddSingleton<CreateViewModel<SettingsViewModel>>(services => () => CreateSettingsViewModel(services));
 
                 services.AddSingleton<IViewModelFactory, ViewModelFactory>();
 
@@ -39,6 +40,11 @@ namespace POSM.wpf.HostBuilders
             return new LoginViewModel(
                 services.GetRequiredService<IAuthenticator>(),
                 services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>());
+        }
+
+        private static SettingsViewModel CreateSettingsViewModel(IServiceProvider services)
+        {
+            return new SettingsViewModel();
         }
     }
 }

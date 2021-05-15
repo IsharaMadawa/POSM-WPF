@@ -5730,6 +5730,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Microsoft.AspNet.Identity.Core >= 2.2.3",
+      "Microsoft.EntityFrameworkCore >= 5.0.6",
       "POSM.EntityFramework >= 1.0.0"
     ]
   },
@@ -5790,6 +5791,10 @@
           "Microsoft.AspNet.Identity.Core": {
             "target": "Package",
             "version": "[2.2.3, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.6, )"
           }
         },
         "imports": [

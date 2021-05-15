@@ -17,20 +17,20 @@ namespace POSM.wpf.State.Authenticators
             _accountStore = accountStore;
         }
 
-        public Account CurrentAccount
-        {
-            get
-            {
+		public User CurrentAccount
+		{
+			get
+			{
                 return _accountStore.CurrentAccount;
-            }
-            private set
-            {
-                _accountStore.CurrentAccount = value;
-                StateChanged?.Invoke();
-            }
-        }
+			}
+			private set
+			{
+				_accountStore.CurrentAccount = value;
+				StateChanged?.Invoke();
+			}
+		}
 
-        public bool IsLoggedIn => CurrentAccount != null;
+		public bool IsLoggedIn => CurrentAccount != null;
 
         public event Action StateChanged;
 
@@ -42,11 +42,6 @@ namespace POSM.wpf.State.Authenticators
         public void Logout()
         {
             CurrentAccount = null;
-        }
-
-        public async Task<RegistrationResult> Register(string email, string username, string password, string confirmPassword)
-        {
-            return await _authenticationService.Register(email, username, password, confirmPassword);
         }
     }
 }
