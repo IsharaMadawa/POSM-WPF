@@ -10,6 +10,9 @@
     <Compile Update="Controls\NavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\BillingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BillingView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">

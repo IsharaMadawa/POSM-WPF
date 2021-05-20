@@ -94,3 +94,5 @@ D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\bin\Debug\net6.0-wind
 D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\obj\Debug\net6.0-windows\Views\SettingsView.g.cs
 D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\obj\Debug\net6.0-windows\Views\SettingsView.baml
+D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\obj\Debug\net6.0-windows\Views\BillingView.g.cs
+D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\obj\Debug\net6.0-windows\Views\BillingView.baml

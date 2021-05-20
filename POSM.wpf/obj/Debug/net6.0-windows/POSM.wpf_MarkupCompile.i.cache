@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Ishara Madawa\Personal - MadXish\Projects\POSM\POSM.wpf\App.xaml
-7515394368
+81698742808
 
-35-266577392
+37451025358
 23797300272
-Controls\NavigationBar.xaml;MainWindow.xaml;Styles\Common.xaml;Styles\NavigationBar.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\SettingsView.xaml;
+Controls\NavigationBar.xaml;MainWindow.xaml;Styles\Common.xaml;Styles\NavigationBar.xaml;Views\BillingView.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\SettingsView.xaml;
 
-True
+False
 
