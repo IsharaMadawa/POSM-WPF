@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:POSM.wpf"
              xmlns:viewmodels="clr-namespace:POSM.wpf.ViewModels"
-             xmlns:views="clr-namespace:POSM.wpf.Views">
+             xmlns:views="clr-namespace:POSM.wpf.Views"
+             xmlns:settingsviews="clr-namespace:POSM.wpf.Views.Settings">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Common.xaml" />
-                <ResourceDictionary Source="/Styles/NavigationBar.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
@@ -19,12 +19,12 @@
                 <views:HomeView />
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
-                <views:SettingsView />
-            </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewmodels:BillingViewModel}">
                 <views:BillingView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
+                <settingsviews:SettingsView />
             </DataTemplate>
 
         </ResourceDictionary>

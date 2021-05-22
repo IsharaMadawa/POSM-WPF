@@ -8,9 +8,32 @@
              xmlns:local="clr-namespace:POSM.wpf.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="20" MaxWidth="1000">
-        <Button Name="billing" 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Background="{StaticResource BrushPrimary1}">
+            <TextBlock Padding="10"
+                MaxWidth="1000"
+                FontSize="28"
+                Foreground="White"
+                Text="POS-M" />
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Name="billing" 
                 Content="Billing"
+                Margin="5,0,0,0" 
+                Height="34"
                 Command="{Binding ViewBillingCommand}" />
+            <Button Name="settings" 
+                Content="Settings"
+                Margin="5,0,0,0" 
+                Height="34"
+                Command="{Binding ViewSettingsCommand}" />
+        </StackPanel>
+       
     </Grid>
 </UserControl>

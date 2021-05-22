@@ -7,8 +7,10 @@ namespace POSM.wpf.State.Navigators
     {
         Login,
         Home,
+        Billing,
         Settings,
-        Billing
+        BillingSettings,
+        About
     }
 
     public interface INavigator

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mY4eECUsGQEIhDjSUp8bG/voReiZ4Y3LI4gmKq8rO9iUhfLJ0huv6wsQyp1VyfBwACsk/HTWuvjlCHSeokC87Q==",
+  "dgSpecHash": "8awggw0i2J3gONZrN/qmOSpND/c5/e6N9be77/GggXGDAuxkHDa/yaeqbHMJJ+d0c2Sza2W2XgNkzKCbbcCGSQ==",
   "success": true,
   "projectFilePath": "D:\\Ishara Madawa\\Personal - MadXish\\Projects\\POSM\\POSM.wpf\\POSM.wpf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isharak\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\isharak\\.nuget\\packages\\materialdesigncolors\\2.0.0\\materialdesigncolors.2.0.0.nupkg.sha512",
+    "C:\\Users\\isharak\\.nuget\\packages\\materialdesignthemes\\4.0.0\\materialdesignthemes.4.0.0.nupkg.sha512",
     "C:\\Users\\isharak\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\isharak\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\isharak\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

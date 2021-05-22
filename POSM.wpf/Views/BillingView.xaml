@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Billing" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Name="home" 
+                Content="Back to Main Menu"
+                Margin="5,0,0,0" 
+                Height="34"
+                Command="{Binding ViewHomeCommand}" />
+        </StackPanel>
     </Grid>
 </UserControl>

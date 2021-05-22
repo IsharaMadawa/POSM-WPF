@@ -35,12 +35,12 @@ namespace POSM.wpf.ViewModels
             OnPropertyChanged(nameof(IsLoggedIn));
         }
 
-        private void Navigator_StateChanged()
-        {
-            OnPropertyChanged(nameof(CurrentViewModel));
-        }
+		private void Navigator_StateChanged()
+		{
+			OnPropertyChanged(nameof(CurrentViewModel));
+		}
 
-        public override void Dispose()
+		public override void Dispose()
         {
             _navigator.StateChanged -= Navigator_StateChanged;
             _authenticator.StateChanged -= Authenticator_StateChanged;
