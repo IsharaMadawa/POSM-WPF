@@ -43,7 +43,8 @@ namespace POSM.wpf.HostBuilders
         {
             return new HomeViewModel(
                  services.GetRequiredService<ViewModelDelegateRenavigator<BillingViewModel>>(),
-                 services.GetRequiredService<ViewModelDelegateRenavigator<SettingsViewModel>>());
+                 services.GetRequiredService<ViewModelDelegateRenavigator<SettingsViewModel>>(),
+                 services.GetRequiredService<INavigationHandler>());
         }
 
         private static LoginViewModel CreateLoginViewModel(IServiceProvider services)

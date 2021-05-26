@@ -1,30 +1,35 @@
-﻿using POSM.wpf.State.Authenticators;
-using POSM.wpf.ViewModels;
-using System;
+﻿using System;
 using System.Windows.Input;
 
 namespace POSM.wpf.Commands
 {
 	public class RelayCommand : ICommand
-    {
-        private readonly INavigationHandler _navigationHandler;
-        private readonly BillingViewModel _viewModel;
-		public event EventHandler CanExecuteChanged;
+	{
+        private readonly Action<object> _execute;
+        private readonly Predicate<object> _canExecute;
 
-		public RelayCommand(BillingViewModel viewModel, INavigationHandler navigationHandler)
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
         {
-            _viewModel = viewModel;
-            _navigationHandler = navigationHandler;
+            if (execute == null) throw new ArgumentNullException("execute");
+
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return _canExecute == null || _canExecute(parameter);
+        }
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public void Execute(object parameter)
         {
-            _navigationHandler.UpdateNavBarStatus(_viewModel.isShowNav);
+            _execute(parameter ?? "<N/A>");
         }
-	}
+    }
 }

@@ -21,15 +21,12 @@ namespace POSM.wpf.ViewModels
 
         public bool _isShowNavigation = true;
         public bool isShowNavigation
-        {
+		{
             get { return _isShowNavigation; }
             set
-            {
-                if (value != _isShowNavigation)
-                {
-                    _isShowNavigation = value;
-                    OnPropertyChanged("isShowNavigation");
-                }
+			{
+				_isShowNavigation = value;
+				OnPropertyChanged("isShowNavigation");
             }
         }
 
