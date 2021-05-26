@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using POSM.wpf.State.Accounts;
 using POSM.wpf.State.Authenticators;
 using POSM.wpf.State.Navigators;
+using POSM.wpf.Stores;
 
 namespace POSM.wpf.HostBuilders
 {
@@ -13,6 +14,7 @@ namespace POSM.wpf.HostBuilders
             host.ConfigureServices(services =>
             {
                 services.AddSingleton<INavigator, Navigator>();
+                services.AddSingleton<INavigationHandler, NavigationHandler>();
                 services.AddSingleton<IAuthenticator, Authenticator>();
                 services.AddSingleton<IAccountStore, AccountStore>();
             });

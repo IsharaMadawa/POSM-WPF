@@ -4,18 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POSM.wpf"
+        xmlns:controls="clr-namespace:POSM.wpf.Controls"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450" Width="800"
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="Converter" />
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid Grid.Row="0">
             <Grid.Style>
                 <Style TargetType="Grid">
@@ -26,6 +32,8 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
+
+            <controls:NavigationBar Visibility="{Binding Path=isShowNavigation, Converter={StaticResource Converter}}"/>
         </Grid>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">

@@ -14,10 +14,11 @@
         
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Button Name="home" 
-                Content="Back to Main Menu"
+                Content="Back to Main Menu 1"
                 Margin="5,0,0,0" 
                 Height="34"
                 Command="{Binding ViewHomeCommand}" />
+            <Button Content="Button"  Command="{Binding ButtonCommand}"  />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -10,6 +10,8 @@ namespace POSM.wpf.State.Authenticators
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly IAccountStore _accountStore;
+        public bool IsLoggedIn => CurrentAccount != null;
+        public event Action StateChanged;
 
         public Authenticator(IAuthenticationService authenticationService, IAccountStore accountStore)
         {
@@ -29,10 +31,6 @@ namespace POSM.wpf.State.Authenticators
 				StateChanged?.Invoke();
 			}
 		}
-
-		public bool IsLoggedIn => CurrentAccount != null;
-
-        public event Action StateChanged;
 
         public async Task Login(string username, string password)
         {
