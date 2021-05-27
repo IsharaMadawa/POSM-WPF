@@ -1,0 +1,41 @@
+﻿<Application x:Class="POSM.wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:POSM.wpf"
+             xmlns:viewmodels="clr-namespace:POSM.wpf.ViewModels"
+             xmlns:views="clr-namespace:POSM.wpf.Views"
+             xmlns:settingsviews="clr-namespace:POSM.wpf.Views.Settings"
+             xmlns:popviews="clr-namespace:POSM.wpf.Views.PopUpViews"
+             xmlns:popviewsmodels="clr-namespace:POSM.wpf.ViewModels.PopUpViewModels">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Common.xaml" />
+                <ResourceDictionary Source="/Styles/NavigationBar.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:BillingViewModel}">
+                <views:BillingView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
+                <settingsviews:SettingsView />
+            </DataTemplate>
+
+            <!--#region Pop-up Views -->
+            <DataTemplate DataType="{x:Type popviewsmodels:BillingItemEditViewModel}">
+                <popviews:BillingItemEditView />
+            </DataTemplate>
+            <!--#endregion-->
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
