@@ -3,7 +3,7 @@ using System;
 
 namespace POSM.wpf.State.Accounts
 {
-    public class AccountStore : IAccountStore
+    public class UserStore : IUserStore
     {
         private User _currentAccount;
         public User CurrentAccount

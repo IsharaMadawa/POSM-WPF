@@ -9,11 +9,11 @@ namespace POSM.wpf.State.Authenticators
     public class Authenticator : IAuthenticator
     {
         private readonly IAuthenticationService _authenticationService;
-        private readonly IAccountStore _accountStore;
+        private readonly IUserStore _accountStore;
         public bool IsLoggedIn => CurrentAccount != null;
         public event Action StateChanged;
 
-        public Authenticator(IAuthenticationService authenticationService, IAccountStore accountStore)
+        public Authenticator(IAuthenticationService authenticationService, IUserStore accountStore)
         {
             _authenticationService = authenticationService;
             _accountStore = accountStore;

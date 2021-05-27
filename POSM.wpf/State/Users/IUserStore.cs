@@ -3,7 +3,7 @@ using System;
 
 namespace POSM.wpf.State.Accounts
 {
-    public interface IAccountStore
+    public interface IUserStore
     {
         User CurrentAccount { get; set; }
         event Action StateChanged;

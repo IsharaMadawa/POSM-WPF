@@ -16,7 +16,7 @@ namespace POSM.wpf.HostBuilders
                 services.AddSingleton<INavigator, Navigator>();
                 services.AddSingleton<INavigationHandler, NavigationHandler>();
                 services.AddSingleton<IAuthenticator, Authenticator>();
-                services.AddSingleton<IAccountStore, AccountStore>();
+                services.AddSingleton<IUserStore, UserStore>();
             });
 
             return host;
