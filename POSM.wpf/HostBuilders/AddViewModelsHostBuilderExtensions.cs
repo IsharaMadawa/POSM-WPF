@@ -2,10 +2,8 @@
 using Microsoft.Extensions.Hosting;
 using POSM.wpf.State.Authenticators;
 using POSM.wpf.State.Navigators;
-using POSM.wpf.Stores;
 using POSM.wpf.ViewModels;
 using POSM.wpf.ViewModels.Factories;
-using POSM.wpf.ViewModels.PopUpViewModels;
 using System;
 
 namespace POSM.wpf.HostBuilders
@@ -24,9 +22,6 @@ namespace POSM.wpf.HostBuilders
                 services.AddSingleton<CreateViewModel<BillingViewModel>>(services => () => CreateBillingViewModel(services));
                 services.AddSingleton<CreateViewModel<SettingsViewModel>>(services => () => CreateSettingsViewModel(services));
 
-				#region Pop-ups
-				services.AddSingleton<CreateViewModel<BillingItemEditViewModel>>(services => () => CreateBillingItemEdiViewModel(services)); 
-				#endregion
 
 				services.AddSingleton<IViewModelFactory, ViewModelFactory>();
 
@@ -64,12 +59,5 @@ namespace POSM.wpf.HostBuilders
             return new BillingViewModel(services.GetRequiredService<ViewModelDelegateRenavigator<HomeViewModel>>(),
                 services.GetRequiredService<INavigationHandler>());
         }
-
-		#region Pop-ups
-		private static BillingItemEditViewModel CreateBillingItemEdiViewModel(IServiceProvider services)
-		{
-			return new BillingItemEditViewModel();
-		} 
-		#endregion
 	}
 }

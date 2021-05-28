@@ -8,7 +8,9 @@ namespace POSM.wpf.ViewModels
 	public class BillingViewModel : ViewModelBase
 	{
 		public MessageViewModel ErrorMessageViewModel { get; }
+
 		public ICommand ViewHomeCommand { get; }
+		public ICommand ViewBillingItem { get; set; }
 		public ICommand avtivateNavigationCommand { get; set; }
 
 		public BillingViewModel(IRenavigator HomeRenavigator, INavigationHandler navigationHandler)
@@ -24,6 +26,5 @@ namespace POSM.wpf.ViewModels
 		{
 			base.Dispose();
 		}
-
 	}
 }

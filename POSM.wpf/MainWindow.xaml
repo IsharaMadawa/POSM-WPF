@@ -39,5 +39,11 @@
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <ContentControl Content="{Binding CurrentViewModel}"/>
         </ScrollViewer>
+
+        <!--<Button Name="editItem" 
+                Content="Pop-up"
+                Margin="5,0,0,0" 
+                Height="34"
+                Command="{Binding ViewBillingItemEditPopup}" />-->
     </Grid>
 </Window>

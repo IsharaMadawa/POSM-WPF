@@ -5,6 +5,7 @@ using POSM.Domain.Services;
 using POSM.Domain.Services.AuthenticationServices;
 using POSM.EntityFramework.Models;
 using POSM.EntityFramework.Services.Common;
+using POSM.wpf.State.Dialogs;
 
 namespace POSM.wpf.HostBuilders
 {
@@ -17,6 +18,7 @@ namespace POSM.wpf.HostBuilders
                 services.AddSingleton<IPasswordHasher, PasswordHasher>();
                 services.AddSingleton<IAuthenticationService, AuthenticationService>();
                 services.AddSingleton<IDataService<Account>, AccountDataService>();
+                
                 services.AddSingleton<IAccountService, AccountDataService>();
             });
 

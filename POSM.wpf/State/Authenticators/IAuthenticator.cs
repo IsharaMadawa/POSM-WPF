@@ -1,5 +1,4 @@
-﻿using POSM.Domain.Services.AuthenticationServices;
-using POSM.EntityFramework.Models;
+﻿using POSM.EntityFramework.Models;
 using System;
 using System.Threading.Tasks;
 

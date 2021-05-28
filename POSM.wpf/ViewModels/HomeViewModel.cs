@@ -9,15 +9,16 @@ namespace POSM.wpf.ViewModels
     {
         public ICommand ViewBillingCommand { get; }
         public ICommand ViewSettingsCommand { get; }
-        public ICommand avtivateNavigationCommand { get; set; }
+        public ICommand AvtivateNavigationCommand { get; set; }
+        
 
         public HomeViewModel(IRenavigator billingRenavigator, IRenavigator settingsRenavigator, INavigationHandler navigationHandler)
 		{
             ViewBillingCommand = new RenavigateCommand(billingRenavigator);
             ViewSettingsCommand = new RenavigateCommand(settingsRenavigator);
 
-            avtivateNavigationCommand = new NavigationBarCommand(true, navigationHandler);
-            avtivateNavigationCommand.Execute(null);
+            AvtivateNavigationCommand = new NavigationBarCommand(true, navigationHandler);
+            AvtivateNavigationCommand.Execute(null);
         }
 
         public override void Dispose()

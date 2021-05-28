@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using POSM.wpf.ViewModels;
-using POSM.wpf.Views.Settings;
 
 namespace POSM.wpf.HostBuilders
 {

@@ -4,9 +4,7 @@
              xmlns:local="clr-namespace:POSM.wpf"
              xmlns:viewmodels="clr-namespace:POSM.wpf.ViewModels"
              xmlns:views="clr-namespace:POSM.wpf.Views"
-             xmlns:settingsviews="clr-namespace:POSM.wpf.Views.Settings"
-             xmlns:popviews="clr-namespace:POSM.wpf.Views.PopUpViews"
-             xmlns:popviewsmodels="clr-namespace:POSM.wpf.ViewModels.PopUpViewModels">
+             xmlns:settingsviews="clr-namespace:POSM.wpf.Views.Settings">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,12 +27,6 @@
             <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
                 <settingsviews:SettingsView />
             </DataTemplate>
-
-            <!--#region Pop-up Views -->
-            <DataTemplate DataType="{x:Type popviewsmodels:BillingItemEditViewModel}">
-                <popviews:BillingItemEditView />
-            </DataTemplate>
-            <!--#endregion-->
 
         </ResourceDictionary>
     </Application.Resources>
