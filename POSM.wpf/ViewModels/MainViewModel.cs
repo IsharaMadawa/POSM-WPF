@@ -1,6 +1,5 @@
 ﻿using POSM.wpf.Commands;
 using POSM.wpf.State.Authenticators;
-using POSM.wpf.State.Dialogs;
 using POSM.wpf.State.Navigators;
 using POSM.wpf.Stores;
 using POSM.wpf.ViewModels.Factories;
@@ -19,6 +18,7 @@ namespace POSM.wpf.ViewModels
         public ViewModelBase CurrentViewModel => _navigator.CurrentViewModel;
 
         public ICommand UpdateCurrentViewModelCommand { get; }
+        public ICommand ShowItemEditView { get; }
 
         public bool _isShowNavigation = true;
         public bool isShowNavigation
