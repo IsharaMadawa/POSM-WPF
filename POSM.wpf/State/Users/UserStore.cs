@@ -1,25 +1,24 @@
 ﻿using POSM.EntityFramework.Models;
 using System;
 
-namespace POSM.wpf.State.Accounts
+namespace POSM.wpf.State.Users
 {
     public class UserStore : IUserStore
     {
-        private User _currentAccount;
-        public User CurrentAccount
+        private User _currentUser;
+        public User CurrentUser
         {
             get
             {
-                return _currentAccount;
+                return _currentUser;
             }
             set
             {
-                _currentAccount = value;
+                _currentUser = value;
                 StateChanged?.Invoke();
             }
         }
 
         public event Action StateChanged;
-
     }
 }

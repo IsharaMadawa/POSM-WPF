@@ -16,46 +16,52 @@
     
     <!--Background Events Triggers-->
     <!--<i:Interaction.Triggers>
-        <i:EventTrigger EventName="MouseLeftButtonDown" >
-            <i:InvokeCommandAction Command="{Binding LeftMouseButtonDown}" />
+        <i:EventTrigger EventName="KeyDown" >
+            <i:InvokeCommandAction Command="{Binding ItemCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>-->
+    <!--End of Background Events Triggers-->
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
         
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <!--Item Edit Panel-->
-        <StackPanel x:Name="GridMenu" Width="250" Panel.ZIndex="1000" HorizontalAlignment="Left" Margin="0 0 0 0" Background="Red"
+        <StackPanel Grid.RowSpan="2" x:Name="GridMenu" Width="250" Panel.ZIndex="1000" HorizontalAlignment="Left" Margin="0 0 0 0" Background="Red"
                     Visibility="{Binding DisplayControl, Converter={StaticResource visibilityConverter}}">
             <StackPanel>
                 <TextBlock Margin="0,30,0,0" Text="Item Edit"></TextBlock>
             </StackPanel>
-            <Button x:Name="ButtonClose" Command="{Binding ShowItemEdit}" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
+            <Button x:Name="ButtonClose" Command="{Binding ShowItemEdit}" CommandParameter="Close" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
                 <materialDesign:PackIcon Kind="Close" Height="20" Margin="-15,0,0,10" Width="31" VerticalAlignment="Bottom" Foreground="Black" />
             </Button>
         </StackPanel>
         <!--End of Item Edit Panel-->
 
         <!--Billing Control Panel-->
-        <Grid IsEnabled="{Binding DisplayControl, Mode=OneWay, Converter={StaticResource InverseBooleanConverter}}" HorizontalAlignment="Left">
+        <Grid Grid.Row="0" Grid.Column="1" IsEnabled="{Binding DisplayControl, Mode=OneWay, Converter={StaticResource InverseBooleanConverter}}" HorizontalAlignment="Left">
             <StackPanel>
                 <Button Name="home" 
                     Content="Back to Main Menu 1"
                     Margin="5,0,0,0" 
                     Height="34"
                     Command="{Binding ViewHomeCommand}" />
-                <Button Name="itemEdit" 
-                    Content="Item Edit"
-                    Margin="5,0,0,0" 
-                    Height="34">
-                </Button>
                 <TextBox 
+                    Name="txtReader"
                     Margin="5,0,0,0" 
                     Height="34"
                     Width="500"
-                    IsReadOnly="False" >
+                    IsReadOnly="False" 
+                    Text="{Binding readingItemCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="TextChanged" >
-                            <i:InvokeCommandAction Command="{Binding ShowItemEdit}" />
+                            <i:InvokeCommandAction Command="{Binding ShowItemEdit}" CommandParameter="Open"  />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </TextBox>
@@ -63,8 +69,10 @@
         </Grid>
         <!--End of Billing Control Panel-->
 
-        <!--<DataGrid x:Name="Items">
-            
-        </DataGrid>-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <DataGrid x:Name="Items" ItemsSource="{Binding Path=Items}" >
+
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>

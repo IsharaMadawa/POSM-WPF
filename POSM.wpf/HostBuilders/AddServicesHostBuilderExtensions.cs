@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using POSM.Domain.Services;
 using POSM.Domain.Services.AuthenticationServices;
+using POSM.Domain.Services.ItemServices;
 using POSM.EntityFramework.Models;
 using POSM.EntityFramework.Services.Common;
 
@@ -18,6 +19,7 @@ namespace POSM.wpf.HostBuilders
                 services.AddSingleton<IAuthenticationService, AuthenticationService>();
                 services.AddSingleton<IDataService<User>, UserDataService>();
                 services.AddSingleton<IUserService, UserDataService>();
+                services.AddSingleton<IItemService, ItemSevice>();
             });
 
             return host;

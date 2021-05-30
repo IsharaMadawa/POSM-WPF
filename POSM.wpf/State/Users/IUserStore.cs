@@ -1,11 +1,11 @@
 ﻿using POSM.EntityFramework.Models;
 using System;
 
-namespace POSM.wpf.State.Accounts
+namespace POSM.wpf.State.Users
 {
     public interface IUserStore
     {
-        User CurrentAccount { get; set; }
+        User CurrentUser { get; set; }
         event Action StateChanged;
     }
 }

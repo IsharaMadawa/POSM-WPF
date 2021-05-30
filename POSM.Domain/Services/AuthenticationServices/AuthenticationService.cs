@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using POSM.Domain.Exceptions;
 using POSM.EntityFramework.Models;
-using System;
 using System.Threading.Tasks;
 
 namespace POSM.Domain.Services.AuthenticationServices
@@ -19,21 +18,21 @@ namespace POSM.Domain.Services.AuthenticationServices
 
         public async Task<User> Login(string username, string password)
         {
-			User storedAccount = await _userService.GetByUsername(username);
+			User storedUser = await _userService.GetByUsername(username);
 
-			if (storedAccount == null)
+			if (storedUser == null)
 			{
 				throw new UserNotFoundException(username);
 			}
 
-			PasswordVerificationResult passwordResult = _passwordHasher.VerifyHashedPassword(storedAccount.PasswordHash, password);
+			PasswordVerificationResult passwordResult = _passwordHasher.VerifyHashedPassword(storedUser.PasswordHash, password);
 
 			if (passwordResult != PasswordVerificationResult.Success)
 			{
 				throw new InvalidPasswordException(username, password);
 			}
 
-			return storedAccount;
+			return storedUser;
         }
     }
 }

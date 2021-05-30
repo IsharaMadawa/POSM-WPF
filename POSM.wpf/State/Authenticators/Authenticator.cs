@@ -1,6 +1,6 @@
 ﻿using POSM.Domain.Services.AuthenticationServices;
 using POSM.EntityFramework.Models;
-using POSM.wpf.State.Accounts;
+using POSM.wpf.State.Users;
 using System;
 using System.Threading.Tasks;
 
@@ -9,37 +9,37 @@ namespace POSM.wpf.State.Authenticators
     public class Authenticator : IAuthenticator
     {
         private readonly IAuthenticationService _authenticationService;
-        private readonly IUserStore _accountStore;
-        public bool IsLoggedIn => CurrentAccount != null;
+        private readonly IUserStore _userStore;
+        public bool IsLoggedIn => CurrentUser != null;
         public event Action StateChanged;
 
-        public Authenticator(IAuthenticationService authenticationService, IUserStore accountStore)
+        public Authenticator(IAuthenticationService authenticationService, IUserStore userStore)
         {
             _authenticationService = authenticationService;
-            _accountStore = accountStore;
+            _userStore = userStore;
         }
 
-		public User CurrentAccount
-		{
+		public User CurrentUser
+        {
 			get
 			{
-                return _accountStore.CurrentAccount;
+                return _userStore.CurrentUser;
 			}
 			private set
 			{
-				_accountStore.CurrentAccount = value;
+                _userStore.CurrentUser = value;
 				StateChanged?.Invoke();
 			}
 		}
 
         public async Task Login(string username, string password)
         {
-            CurrentAccount = await _authenticationService.Login(username, password);
+            CurrentUser = await _authenticationService.Login(username, password);
         }
 
         public void Logout()
         {
-            CurrentAccount = null;
+            CurrentUser = null;
         }
     }
 }

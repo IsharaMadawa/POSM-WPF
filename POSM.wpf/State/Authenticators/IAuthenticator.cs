@@ -6,7 +6,7 @@ namespace POSM.wpf.State.Authenticators
 {
     public interface IAuthenticator
     {
-        User CurrentAccount { get; }
+        User CurrentUser { get; }
         bool IsLoggedIn { get; }
 
         event Action StateChanged;

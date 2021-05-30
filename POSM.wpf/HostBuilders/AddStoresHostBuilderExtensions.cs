@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using POSM.wpf.State.Accounts;
+using POSM.wpf.State.Users;
 using POSM.wpf.State.Authenticators;
 using POSM.wpf.State.Navigators;
 using POSM.wpf.Stores;

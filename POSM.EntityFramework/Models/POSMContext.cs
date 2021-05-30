@@ -17,6 +17,7 @@ namespace POSM.EntityFramework.Models
         {
         }
 
+        public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,6 +32,23 @@ namespace POSM.EntityFramework.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<Item>(entity =>
+            {
+                entity.ToTable("Item");
+
+                entity.Property(e => e.ItemCode)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ItemName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UnitPrice).HasColumnType("decimal(18, 2)");
+            });
 
             modelBuilder.Entity<User>(entity =>
             {
