@@ -16,8 +16,8 @@ namespace POSM.wpf.HostBuilders
             {
                 services.AddSingleton<IPasswordHasher, PasswordHasher>();
                 services.AddSingleton<IAuthenticationService, AuthenticationService>();
-                services.AddSingleton<IDataService<Account>, AccountDataService>();
-                services.AddSingleton<IAccountService, AccountDataService>();
+                services.AddSingleton<IDataService<User>, UserDataService>();
+                services.AddSingleton<IUserService, UserDataService>();
             });
 
             return host;

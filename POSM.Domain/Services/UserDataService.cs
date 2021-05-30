@@ -9,33 +9,33 @@ using System.Threading.Tasks;
 
 namespace POSM.Domain.Services
 {
-    public class AccountDataService : IAccountService
+    public class UserDataService : IUserService
     {
         private readonly POSMContextFactory _contextFactory;
-        private readonly NonQueryDataService<Account> _nonQueryDataService;
+        private readonly NonQueryDataService<User> _nonQueryDataService;
 
-        public AccountDataService(POSMContextFactory contextFactory)
+        public UserDataService(POSMContextFactory contextFactory)
         {
             _contextFactory = contextFactory;
-            _nonQueryDataService = new NonQueryDataService<Account>(contextFactory);
+            _nonQueryDataService = new NonQueryDataService<User>(contextFactory);
         }
 
-        public async Task<Account> Create(Account entity)
+        public async Task<User> Create(User entity)
         {
             return await _nonQueryDataService.Create(entity);
         }
 
-        public async Task<bool> Delete(Account entity)
+        public async Task<bool> Delete(User entity)
         {
             return await _nonQueryDataService.Delete(entity);
         }
 
-		public IList<Account> GetAll(params Expression<Func<Account, object>>[] navigationProperties)
+		public IList<User> GetAll(params Expression<Func<User, object>>[] navigationProperties)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task<Account> GetByEmail(string email)
+		public Task<User> GetByEmail(string email)
 		{
 			throw new System.NotImplementedException();
 		}
@@ -48,17 +48,17 @@ namespace POSM.Domain.Services
             }
         }
 
-		public IList<Account> GetList(Func<Account, bool> where, params Expression<Func<Account, object>>[] navigationProperties)
+		public IList<User> GetList(Func<User, bool> where, params Expression<Func<User, object>>[] navigationProperties)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Account GetSingle(Func<Account, bool> where, params Expression<Func<Account, object>>[] navigationProperties)
+		public User GetSingle(Func<User, bool> where, params Expression<Func<User, object>>[] navigationProperties)
 		{
 			throw new NotImplementedException();
 		}
 
-		public async Task<Account> Update(Account entity)
+		public async Task<User> Update(User entity)
         {
             return await _nonQueryDataService.Update(entity);
         }

@@ -8,18 +8,18 @@ namespace POSM.Domain.Services.AuthenticationServices
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IAccountService _accountService;
+        private readonly IUserService _userService;
         private readonly IPasswordHasher _passwordHasher;
 
-        public AuthenticationService(IAccountService accountService, IPasswordHasher passwordHasher)
+        public AuthenticationService(IUserService userService, IPasswordHasher passwordHasher)
         {
-            _accountService = accountService;
+            _userService = userService;
             _passwordHasher = passwordHasher;
         }
 
         public async Task<User> Login(string username, string password)
         {
-			User storedAccount = await _accountService.GetByUsername(username);
+			User storedAccount = await _userService.GetByUsername(username);
 
 			if (storedAccount == null)
 			{
